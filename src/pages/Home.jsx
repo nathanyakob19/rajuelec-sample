@@ -1,0 +1,18 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { reasons, services } from '../data/siteContent.js';
+import { ServiceCard } from '../components/PageElements.jsx';
+
+export default function Home() { return <><section className="hero">
+    <div className="hero-glow"/>
+    <div className="container hero-grid">
+        <div className="hero-copy"><div className="eyebrow">
+            <span className="eyebrow-dot"/> ELECTRICAL INFRASTRUCTURE PARTNER</div><h1>Powering progress.<br/><em>Built on reliability.</em></h1><p>Electrical contracting and infrastructure solutions delivered with a focus on quality, safety and dependable execution.</p>
+            <div className="hero-actions"><Link className="btn btn-primary" to="/services">Explore our services <ArrowUpRight size={18}/></Link><Link className="btn btn-outline" to="/contact">Talk to our team</Link></div><div className="hero-proof"><div><strong>200+</strong>
+            <span>Projects completed*</span></div>
+            <div><strong>18+ yrs</strong><span>Industry experience*</span></div>
+            <div><strong>ISO</strong><span>9001:2015 certified*</span></div></div>
+            <small className="fine-print">*Company information as provided in the brochure.</small></div>
+            <div className="hero-visual"><img src="https://images.unsplash.com/photo-1473341304170-971090c3b4b1?auto=format&fit=crop&w=1100&q=85" alt="High-voltage electrical transmission infrastructure"/>
+            <div className="visual-tag"><span className="tag-icon"><ShieldCheck size={23}/></span><span><strong>Safety-first approach</strong><small>Quality. Precision. Reliability.</small></span></div><div className="visual-outline"/></div></div></section><section className="trust-strip"><div className="container trust-inner"><span>Serving industrial infrastructure needs</span><b>Industrial</b><b>Commercial</b><b>Utilities</b><b>Critical Facilities</b></div></section><section className="section"><div className="container"><div className="section-heading"><div><div className="eyebrow">WHAT WE DO</div><h2>Electrical solutions<br/><em>from plan to handover.</em></h2></div><p>From electrical installation and busbar trunking to fabrication and maintenance, our services support projects at every stage.</p></div><div className="service-grid">{services.slice(0,6).map(s=><ServiceCard key={s.title} service={s}/>)}</div><div className="center-action"><Link to="/services" className="btn btn-dark">View all services <ArrowUpRight size={17}/></Link></div></div></section><section className="section dark-section"><div className="container split"><div><div className="eyebrow light">WHY REW</div><h2>Dependable work.<br/><em>Lasting confidence.</em></h2><p className="muted">Raju Electrical Works is an electrical contracting company established in 2004, serving Navi Mumbai, Maharashtra and neighbouring regions.</p><Link to="/about" className="btn btn-light">Know our company <ArrowUpRight size={17}/></Link></div><div className="reason-list">{reasons.map(([title,text],i)=><div className="reason" key={title}><span className="reason-num">0{i+1}</span><div><h3>{title}</h3><p>{text}</p></div><CheckCircle2 size={20}/></div>)}</div></div></section><section className="section contact-band"><div className="container band-inner"><div><div className="eyebrow">HAVE A PROJECT IN MIND?</div><h2>Let's power your next project.</h2><p>Tell us what you need. Our team can discuss the next steps with you.</p></div><Link className="btn btn-primary" to="/contact">Request an enquiry <ArrowUpRight size={18}/></Link></div></section></> }
